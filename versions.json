@@ -1,0 +1,6 @@
+{
+  "latest_version": "4.0",
+  "release_notes": "TCY-Bot v4.0: Paper-Live Mode met echte prijzen van Rujira API, Telegram-tijdstempels, automatische fallback naar MockExchange, en verbeterde foutafhandeling.",
+  "download_url": "https://raw.githubusercontent.com/BVromans/tcy-bot/main/tcy_bot_v_4_0.py",
+  "published_at": "2025-10-12T22:45:00Z"
+}
