@@ -1,6 +1,19 @@
 {
-  "latest_version": "4.0",
-  "release_notes": "TCY-Bot v4.0: Paper-Live Mode met echte prijzen van Rujira API, Telegram-tijdstempels, automatische fallback naar MockExchange, en verbeterde foutafhandeling.",
-  "download_url": "https://raw.githubusercontent.com/BVromans/tcy-bot/main/tcy_bot_v_4_0.py",
-  "published_at": "2025-10-12T22:45:00Z"
+  "version": "5.7",
+  "name": "tcy_bot_v5.7",
+  "description": "Portfolio-basiswaarde papertrading bot met configureerbare cooldown.",
+  "release_date": "2025-10-16",
+  "changes": [
+    "Toegevoegd: configureerbare TRADE_COOLDOWN via .env",
+    "Verbeterd: portfolio-berekening gebaseerd op INITIAL_TCY en INITIAL_PORTFOLIO_VALUE",
+    "Verbeterd: TCY/USDC-balans wordt correct bijgewerkt na trades",
+    "Toegevoegd: realistische wachttijd tussen trades om dubbele verkopen te voorkomen",
+    "Logging en Telegram-meldingen uitgebreid"
+  ],
+  "requirements": [
+    "Python 3.10+",
+    "aiohttp",
+    "python-dotenv"
+  ],
+  "status": "stable"
 }

@@ -1,7 +1,11 @@
-venv/
-.DS_Store
-bot.log
-bot_state.sqlite
-Backup/
 .env
-
+venv/
+backups/
+__pycache__/
+*.pyc
+*.log
+*.sqlite
+*.csv
+# Synology metadata folders
+@eaDir/
+EOF
