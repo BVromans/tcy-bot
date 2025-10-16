@@ -112,3 +112,105 @@ Logbestanden:
 🛒 BUY uitgevoerd | Δ-3.2% | Gekocht $182.40 | Base=$5700.00 | TCY=33187.00
 🕐 Cooldown actief (60s)...
 ```
+
+---
+
+## 🧹 Geavanceerd GitHub-onderhoud
+
+### 🔒 Gevoelige bestanden volledig uit Git-geschiedenis verwijderen
+
+Gebruik `git filter-repo` om gevoelige of oude bestanden (zoals `.env`) uit de gehele commitgeschiedenis te wissen.
+
+1️⃣ Installeer `git filter-repo`:
+```bash
+pip install git-filter-repo
+```
+
+2️⃣ Maak een mirror-clone:
+```bash
+cd ~
+git clone --mirror https://github.com/BVromans/tcy-bot.git tcy-bot-clean
+```
+
+3️⃣ Ga naar de map:
+```bash
+cd ~/tcy-bot-clean
+```
+
+4️⃣ Verwijder de ongewenste bestanden uit alle commits:
+```bash
+git filter-repo \
+  --path .env \
+  --path readme.txt \
+  --path tcy_bot_v_4_0.py \
+  --invert-paths
+```
+
+5️⃣ Herkoppel de remote en push de opgeschoonde repo:
+```bash
+git remote add origin https://github.com/BVromans/tcy-bot.git
+git push --mirror origin
+```
+
+6️⃣ Controleer online of `.env`, `readme.txt`, en `tcy_bot_v_4_0.py` volledig verdwenen zijn.
+
+7️⃣ Verwijder de tijdelijke map:
+```bash
+cd ~
+rm -rf tcy-bot-clean
+```
+
+### 🏡 Herstellen van lokale omgeving
+
+1️⃣ Ga terug naar je originele project:
+```bash
+cd /volume1/tcy-bot
+```
+
+2️⃣ Controleer status:
+```bash
+git status
+```
+
+3️⃣ Herstel `.env` en verwijder oude bestanden:
+```bash
+git restore .env
+git add .gitignore
+git rm readme.txt tcy_bot_v_4_0.py
+git commit -m "Clean up local repo: remove legacy files and update gitignore"
+```
+
+4️⃣ Push veranderingen:
+```bash
+git push
+```
+
+Als je de melding krijgt:
+```
+! [rejected] main -> main (fetch first)
+```
+Voer dan eerst uit:
+```bash
+git pull --rebase origin main
+```
+Daarna:
+```bash
+git push
+```
+
+Gebruik als alternatief (indien je jouw lokale versie wilt forceren):
+```bash
+git push --force
+```
+
+5️⃣ Controleer tenslotte:
+```bash
+git status
+```
+Moet weergeven:
+```
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+```
+
