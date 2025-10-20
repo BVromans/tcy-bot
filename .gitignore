@@ -1,12 +1,60 @@
+# Environment / secrets
 .env
+.env.*
+
+# Virtual environments
 venv/
-backups/
+.venv/
+env/
+ENV/
+
+# Node / Bun / JS stuff
+node_modules/
+.pnpm-store/
+.pnp/
+.bun/
+bun.lockb
+
+# Python cache / artifacts
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Logs and DB
 *.log
 *.sqlite
+*.db
 *.csv
+
+# Backups
+backups/
+backup-*/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
 # Synology metadata folders
 @eaDir/
-EOF
-.DS_Store
+
+# Build / temp
+dist/
+build/
+tmp/
+temp/
+.cache/
+
+# Entware / system (optional)
+opt/
+opt/*
+
+# Barracuda / project-specific sensitive files
+resources/configuration/production.yml
+resources/configuration/*.yml
+resources/configuration/*.secret
+
+# Local git exclude (if you want per-machine)
+.gitlocal
